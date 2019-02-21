@@ -9,6 +9,14 @@ import com.cts.employeemanagemetsystem.util.DBUtils;
 
 public class LoginDAOImpl implements LoginDAO {
 
+	private LoginDAOImpl(){}
+	private static LoginDAOImpl logindaoimpl;
+	public static LoginDAOImpl getInstance(){
+		if (logindaoimpl == null){
+			logindaoimpl = new LoginDAOImpl();
+		}return logindaoimpl;
+	}
+	
 	public int getUserStatus(String id) {
 		// TODO Auto-generated method stub
 		String query = "select status from login_table where userid=?";
@@ -55,15 +63,15 @@ public class LoginDAOImpl implements LoginDAO {
 		}
 		return null;
 	}
-	public boolean authenticate(String userName,String password){
-		String query= "select * from login_table where username=? and password=?";
+	public boolean authenticate(String userId,String password){
+		String query= "select * from login_table where userid=? and password=?";
 		Connection connection= null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		connection = DBUtils.getConnection();
 		try {
 			preparedStatement = connection.prepareStatement(query);
-			preparedStatement.setString(1, userName);
+			preparedStatement.setString(1, userId);
 			preparedStatement.setString(2, password);
 			resultSet = preparedStatement.executeQuery();
 			if(resultSet.next())
