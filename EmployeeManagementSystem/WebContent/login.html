@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Login</title>
+        <style>
+            input{
+                background-color: #e4e4e4;
+                color: black;
+                border-radius: 5px;
+                border: none;
+                padding: 5px;
+                width: 600px;
+                height: 35px;
+                outline: none;
+            }
+            ::placeholder{
+                color:rgba(169, 169, 169, 0.473);
+            }
+            .tdst{
+                font-size: 5mm;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .button1{
+                text-align: center;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 7px;
+                height: 50px;
+                width: 75px;
+                margin: 5px;
+                margin-top: 10px;
+                opacity: 0.7;
+            }
+            .button1:hover{
+               opacity: 1;
+               cursor: pointer;
+            }
+            .a{text-align: center;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 17.5px;
+                height: 50px;
+                width: 85px;
+                margin: 5px;
+                margin-top: 10px;
+                opacity: 0.7;
+                background-color: green;
+                font-family: Arial, Helvetica, sans-serif;
+                 font-size: 3.5mm;
+            }
+            .a:hover{
+             opacity: 1;
+               cursor: pointer;
+            }
+        </style>
+    </head>
+    <body style="text-align: center">
+        <form action="LoginServlet" method="post">
+            <h2 style="text-align: center; padding: 10px; font-family: Georgia, 'Times New Roman', Times, serif ;font-size: 8mm;margin-top: 30px">Login Credentials</h2>
+            <table align="center" cellpadding="7px">
+                <tr><td class="tdst">UserId : &nbsp;</td><td><input type="text" name="userId" placeholder="17852"></td></tr>
+                <tr><td class="tdst">Password : &nbsp;</td><td><input type="password" name="password" placeholder="whokilledmydog"></td></tr>
+            </table><div style="text-align: center">
+        <button type="submit" class="button1" style="background-color: blue">Submit</button>
+                <button type="reset" class="button1" style="background-color: red">Reset</button>
+                <a href="emplRegistration.html" style="text-decoration:none" class="a">Register</a>
+        </div></form>
+
+    </body>
+</html>
